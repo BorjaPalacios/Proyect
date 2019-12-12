@@ -1,0 +1,99 @@
+.wordEditor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-top: 5vh;
+}
+
+textarea {
+  padding: 5%;
+  font-size: 20px;
+  height: 50%;
+  border-radius: 3%;
+  background-color: rgb(246, 233, 214);
+  font-family: fantasy;
+}
+
+.comands {
+  height: 50%;
+  width: 5%;
+  margin: 5%;
+  margin-top: 5%;
+  padding-top: 2%;
+}
+
+button + button {
+  margin-top: 20%;
+}
+
+.blank {
+  border: none;
+}
+
+.results {
+  margin: 30px;
+  font-size: xx-large;
+}
+
+.limites {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.limites button {
+  border: none;
+  background-color: transparent;
+  font-size: x-large;
+  margin: 0;
+  margin-right: 10px;
+  width: 5%;
+  font-size: small;
+}
+
+.limites :first-child {
+  margin-right: 2vw;
+}
+
+.operator {
+  padding: 18px 40px;
+}
+
+.operaciones {
+  padding-left: 2vw;
+  padding-right: 1vw;
+  background-color: black;
+  color: blanchedalmond;
+  margin-right: auto;
+  font-size: x-large;
+}
+
+td button {
+  border: none;
+  background-color: transparent;
+}
+
+.delete {
+  font-size: x-large;
+}
+
+.offset {
+  margin-top: 5% !important;
+}
+
+.lower {
+  background-color: lightcoral;
+}
+.upper {
+  background-color: cyan;
+}
+.camel {
+  background-color: lightsalmon;
+}
+.fromcamel {
+  background-color: lightgreen;
+}
+.caesar {
+  background-color: lightpink;
+}

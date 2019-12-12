@@ -1,0 +1,11 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+
+# Target
+*/target/*
+target
+
+# InteliJ project files
+*/idea/*
+idea
+.idea
+proactive.iml

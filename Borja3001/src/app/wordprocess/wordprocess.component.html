@@ -1,0 +1,52 @@
+<div class="wordEditor">
+  <textarea #text autofocus rows="10" cols="40" maxlength="255">{{
+    phrase
+  }}</textarea>
+  <div class="comands">
+    <button (click)="toLower(text.value)">Lower</button>
+    <button (click)="toUpper(text.value)">Upper</button>
+    <button (click)="toCamel(text.value)">To Camel</button>
+    <button (click)="fromCamel(text.value)">From Camel</button>
+    <button (click)="caesar(text.value, convert.value)">Caesar</button>
+    <input #convert type="number" min="0" max="5" value="0" />
+  </div>
+  <textarea readonly rows="10" cols="40">{{ result }}</textarea>
+  <br />
+  <div class="results">
+    <div class="limites">
+      <button (click)="setLimit(5)">5</button>
+      <button (click)="setLimit(10)">10</button>
+      <button (click)="setLimit(20)">20</button>
+    </div>
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>phrase</th>
+        <th>method</th>
+        <th>result</th>
+        <th class="blank"></th>
+        <th class="blank"></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of records">
+          <td class="{{ record.method }}">{{ record.id }}</td>
+          <td class="{{ record.method }}">{{ record.phrase }}</td>
+          <td class="{{ record.method }}">{{ record.method }}</td>
+          <td class="{{ record.method }}">{{ record.result }}</td>
+          <td>
+            <button class="delete" (click)="delete(record.id)">
+              &#x02A37;
+            </button>
+          </td>
+          <td>
+            <button class="delete" (click)="getRecord(record.id)">
+              &#x26AA;
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="offset" (click)="setOffset('restar')">&lt;</button>
+    <button class="offset" (click)="setOffset('sumar')">></button>
+  </div>
+</div>

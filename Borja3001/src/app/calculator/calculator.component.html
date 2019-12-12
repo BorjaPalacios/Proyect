@@ -1,0 +1,81 @@
+<div class="calculator">
+    <div class="filter">
+        <table>
+            <thead>
+                <th><button (click)="refreshRecords()">All</button></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of filters;">
+                    <td><button (click)="getType(item)">{{item}}</button></td>
+                </tr>                                                  
+            </tbody>
+        </table>
+    </div>
+    <div class="results">
+        <div class="limites">
+            <button (click)="setLimit(5)">5</button>
+            <button (click)="setLimit(10)">10</button>
+            <button (click)="setLimit(20)">20</button>
+        </div>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>input1</th>
+                <th>input2</th>
+                <th class="operator">operation</th>
+                <th>result</th>
+                <th class="blank"></th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let record of records;">
+                    <td class="{{record.operator}}">{{record.id}}</td>
+                    <td class="{{record.operator}}">{{record.input1}}</td>
+                    <td class="{{record.operator}}">{{record.input2}}</td>
+                    <td class="{{record.operator}}">{{record.operator}}</td>
+                    <td class="{{record.operator}}">{{record.result}}</td>
+                    <td><button (click)="delete(record.id)">&#x02A37;</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="setOffset('restar')">&lt;</button>
+        <button (click)="setOffset('sumar')">></button>
+    </div>
+    <div class="container">
+        <div class="print"><p>{{operation}}</p></div>
+        <div class="remove">
+            <div class="operaciones">
+                <p>Operaciones:{{operaciones}}</p>
+            </div>
+            <button (click)="deleteOperation()">Ce</button>
+            <button (click)="removeValue()">C</button>
+        </div>
+        <div class="number">
+            <button (click)="setValor(1)">1</button>
+            <button (click)="setValor(2)">2</button>
+            <button (click)="setValor(3)">3</button>
+            <button (click)="setValor(4)">4</button>
+            <button (click)="setValor(5)">5</button>
+            <button (click)="setValor(6)">6</button>
+            <button (click)="setValor(7)">7</button>
+            <button (click)="setValor(8)">8</button>
+            <button (click)="setValor(9)">9</button>
+            <button (click)="setValor(0)">0</button>
+            <button (click)="setValor('.')">.</button>
+            <button (click)="setOperator('=')">=</button>
+        </div>
+        <div class="operation">
+                <button (click)="setOperator('+')">+</button>
+                <button (click)="setOperator('-')">-</button>
+                <button (click)="setOperator('x')">x</button>
+                <button (click)="setOperator('/')">/</button>
+                <button (click)="setOperator('log')">log</button>
+                <button (click)="setOperator('%')">%</button>
+                <button (click)="setOperator('sin')">sin</button>
+                <button (click)="setOperator('cos')">cos</button>
+                <button (click)="setOperator('tan')">tan</button>
+                <button (click)="setOperator('!')">!</button>
+                <button (click)="setOperator('&radic;')">&radic;</button>
+                <button (click)="setOperator('^')">^</button>
+        </div>
+    </div>
+</div>
